@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <ChildComponent :porps-for-child="{
-      from: 'Parent',
-      to: 'Child'
-    }"/>
+    <ChildComponent v-bind="propsForChild"/>
   </div>
 </template>
 
@@ -17,7 +14,7 @@ import ChildComponent from './components/ChildComponent.vue';
   },
 })
 export default class App extends Vue {
-  porpsForChild = {
+  propsForChild = {
     from: 'Parent',
     to: 'Child',
   }

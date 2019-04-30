@@ -5,21 +5,10 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
-type PorpsForChild = {
-  from: string,
-  to: string
-}
-
 @Component
 export default class ChildComponent extends Vue {
-  @Prop({ type: Object, required: true }) private porpsForChild!: PorpsForChild;
+  @Prop() private from!: string;
 
-  get from() {
-    return this.porpsForChild.from;
-  }
-
-  get to() {
-    return this.porpsForChild.to;
-  }
+  @Prop() private to!: string;
 }
 </script>
